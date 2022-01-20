@@ -1,15 +1,15 @@
-name: Shell Commands
+name: Shell Commands    
 
-on: [push]
+on: [pull_request]    #Event
 
 jobs:
-  run-shell-commands:
-    runs-on: ubuntu-latest
-    steps:
+  run-shell-commands:   #Name job
+    runs-on: ubuntu-latest    #Virtual machine for job
+    steps:    #Array of Objects, each Object is a step
       - name: echo a string
-        run: echo "Hello World"
+        run: echo "Hello World!"   #Step can perform action or shell command, run used for commands
       - name: multiline script
-        run: |
+        run: |    #pipe used for multiple commands
           node -v
           npm -v
       - name: python Command
